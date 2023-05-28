@@ -1,0 +1,147 @@
+
+<!-- saved from url=(0058)http://localhost/nyusoft-practical/public/unavailable-days -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="8TWEAB6JcDS7ZdIm6jaaNtpTmJfkw14UPHWLBwiM">
+
+    <title>Laravel</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com/">
+    <link href="./Laravel_files/css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <link href="./Laravel_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Laravel_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Laravel_files/boxicons.min.css">
+    <link rel="stylesheet" href="./Laravel_files/bootstrap-icons.css">
+    <link rel="stylesheet" href="./Laravel_files/jquery.timepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="./Laravel_files/style.css">
+</head>
+<body id="body-pd">
+<header class="header" id="header">
+    <div class="header_toggle"> <i class="bx bx-menu" id="header-toggle"></i> </div>
+    <div class="header_img"> <img src="./Laravel_files/hczKIze.jpg" alt=""> </div>
+</header>
+<div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+        <div> <a href="javascript:void(0)" class="nav_logo"> <i class="bx bx-user nav_logo-icon"></i> <span class="nav_logo-name">Logo</span> </a>
+            <div class="nav_list">
+                <a href="http://localhost/nyusoft-practical/public" class="nav_link ">
+                    <i class="bx bx-timer nav_icon"></i> <span class="nav_name">Available Slots</span>
+                </a>
+                <a href="http://localhost/nyusoft-practical/public/unavailable-slots" class="nav_link ">
+                    <i class="bx bx-alarm-off nav_icon"></i> <span class="nav_name">Unavailable Slots</span>
+                </a>
+                <a href="http://localhost/nyusoft-practical/public/unavailable-days" class="nav_link active">
+                    <i class="bx bx-calendar-x nav_icon"></i> <span class="nav_name">Unavailable Days</span>
+                </a>
+                <a href="http://localhost/nyusoft-practical/public/unavailable-days" class="nav_link ">
+                    <i class="bx bx-list-check nav_icon"></i> <span class="nav_name">Booked Slots</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--Container Main start-->
+<div class="height-100 bg-light">
+    
+    <link rel="stylesheet" href="./Laravel_files/bootstrap-datepicker.min.css" integrity="sha512-34s5cpvaNG3BknEWSuOncX28vz97bRI59UnVtEEpFX536A7BtZSJHsDyFoCl8S7Dt2TPzcrCEoHBGeM4SUBDBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+
+    </style>
+    <div class="container-xl big-padding">
+        <div class="row section-title">
+            <h2 class="fs-4">Unavailable Days</h2>
+        </div>
+        <div class="row">
+                    </div>
+
+        <div class="text-white border-radius text-center mb-4 input-center shadow-md bg-dark-grey p-4 pt-5 w-50">
+            <form id="unavailableDaysForm" action="http://localhost/nyusoft-practical/public/unavailable-days/store" novalidate="novalidate">
+                <input type="hidden" name="_token" value="8TWEAB6JcDS7ZdIm6jaaNtpTmJfkw14UPHWLBwiM">                <div class="datepicker-clone">
+                    <div class="row mb-3">
+                        <div class="col-lg-8 col-md-8">
+                            <input class="datepicker form-control input-center w-50" type="text" name="days[]" aria-invalid="false">
+                        </div>
+                        <div class="col-lg-1 col-md-1 action-section">
+                            <a class="btn add-more-date btn-primary mt-1" href="javascript:void(0)"><i class="bx bxs-plus-circle"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="showError" class="error" style="display: none">This field is required.</div>
+                <input type="submit" class="available-submit-btn btn btn-outline-danger fw-bolder px-4 ms-2 fs-8" value="Save">
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+<script src="./Laravel_files/jquery-3.2.1.min.js.download"></script>
+<script src="./Laravel_files/jquery.validate.min.js.download"></script>
+<script src="./Laravel_files/popper.min.js.download"></script>
+<script src="./Laravel_files/bootstrap.bundle.min.js.download"></script>
+<script src="./Laravel_files/jquery-scrolltofixed-min.js.download"></script>
+<script src="./Laravel_files/owl.carousel.min.js.download"></script>
+<script src="./Laravel_files/jquery.timepicker.min.js.download"></script>
+<script src="./Laravel_files/script.js.download"></script>
+    <script src="./Laravel_files/bootstrap-datepicker.min.js.download" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.datepicker').datepicker({
+                autoclose: true,
+                format:"dd/mm/yyyy"
+            });
+
+            $(document.body).on('click','.add-more-date',function () {
+                var cloneData = $(".datepicker-clone .row:first").clone();
+                cloneData.find('.action-section').html('<a class="btn remove-more-date btn-danger mt-1" href="javascript:void(0)"><i class="bx bxs-minus-circle"></i></a>');
+                cloneData.find('.datepicker').val('');
+                cloneData.insertAfter($('.datepicker-clone .row:last'));
+                // console.log(cloneData);
+                   $('.datepicker').datepicker({
+                       autoclose: true,
+                       format:"dd/mm/yyyy"
+                   });
+            })
+            $(document.body).on('click','.remove-more-date',function (){
+                $(this).parent().parent().remove();
+            })
+            $("#unavailableDaysForm").on( "submit", function( event ) {
+                $("#unavailableDaysForm").validate({
+                    showErrors: function(errorMap, errorList) {
+                        if (errorList.length > 0) {
+                            $('#showError').show();
+                        }else{
+                            $('#showError').hide();
+                        }
+                    },
+                });
+                $(".datepicker").each(function(){
+                    $(this).rules("add", {
+                        required: true,
+                    });
+                });
+                if($("#unavailableDaysForm").valid())
+                {
+                    console.log('valid');
+                }else{
+                    console.log('not valid');
+                    event.preventDefault();
+                }
+            });
+
+            // $('#sandbox-container div').datepicker({
+            // });
+        });
+    </script>
+
+
+
+<div class="datepicker datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-bottom" style="top: 130.797px; left: 544.5px; z-index: 10; display: block;"><div class="datepicker-days" style=""><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">May 1920</th><th class="next">»</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="old day" data-date="-1567987200000">25</td><td class="old day" data-date="-1567900800000">26</td><td class="old day" data-date="-1567814400000">27</td><td class="old day" data-date="-1567728000000">28</td><td class="old day" data-date="-1567641600000">29</td><td class="old day" data-date="-1567555200000">30</td><td class="day" data-date="-1567468800000">1</td></tr><tr><td class="day" data-date="-1567382400000">2</td><td class="day" data-date="-1567296000000">3</td><td class="day" data-date="-1567209600000">4</td><td class="day" data-date="-1567123200000">5</td><td class="day" data-date="-1567036800000">6</td><td class="day" data-date="-1566950400000">7</td><td class="active day" data-date="-1566864000000">8</td></tr><tr><td class="day" data-date="-1566777600000">9</td><td class="day" data-date="-1566691200000">10</td><td class="day" data-date="-1566604800000">11</td><td class="day" data-date="-1566518400000">12</td><td class="day" data-date="-1566432000000">13</td><td class="day" data-date="-1566345600000">14</td><td class="day" data-date="-1566259200000">15</td></tr><tr><td class="day" data-date="-1566172800000">16</td><td class="day" data-date="-1566086400000">17</td><td class="day" data-date="-1566000000000">18</td><td class="day" data-date="-1565913600000">19</td><td class="day" data-date="-1565827200000">20</td><td class="day" data-date="-1565740800000">21</td><td class="day" data-date="-1565654400000">22</td></tr><tr><td class="day" data-date="-1565568000000">23</td><td class="day" data-date="-1565481600000">24</td><td class="day" data-date="-1565395200000">25</td><td class="day" data-date="-1565308800000">26</td><td class="day" data-date="-1565222400000">27</td><td class="day" data-date="-1565136000000">28</td><td class="day" data-date="-1565049600000">29</td></tr><tr><td class="day" data-date="-1564963200000">30</td><td class="day" data-date="-1564876800000">31</td><td class="new day" data-date="-1564790400000">1</td><td class="new day" data-date="-1564704000000">2</td><td class="new day" data-date="-1564617600000">3</td><td class="new day" data-date="-1564531200000">4</td><td class="new day" data-date="-1564444800000">5</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">1920</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month focused active">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">1920-1929</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">1919</span><span class="year active focused">1920</span><span class="year">1921</span><span class="year">1922</span><span class="year">1923</span><span class="year">1924</span><span class="year">1925</span><span class="year">1926</span><span class="year">1927</span><span class="year">1928</span><span class="year">1929</span><span class="year new">1930</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-decades" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">1900-1990</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="decade old">1890</span><span class="decade">1900</span><span class="decade">1910</span><span class="decade active focused">1920</span><span class="decade">1930</span><span class="decade">1940</span><span class="decade">1950</span><span class="decade">1960</span><span class="decade">1970</span><span class="decade">1980</span><span class="decade">1990</span><span class="decade new">2000</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-centuries" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">1000-1900</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="century old">900</span><span class="century">1000</span><span class="century">1100</span><span class="century">1200</span><span class="century">1300</span><span class="century">1400</span><span class="century">1500</span><span class="century">1600</span><span class="century">1700</span><span class="century">1800</span><span class="century active focused">1900</span><span class="century new">2000</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div></div></body></html>
